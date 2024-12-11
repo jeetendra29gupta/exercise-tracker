@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} Daily Exercise Tracker with Flask {% endblock %}
+
+{% block content %}
+
+{% include 'header.html' %}
+{% include 'navigation.html' %}
+{% include 'message.html' %}
+
+<br>
+
+<form class="w3-panel w3-leftbar w3-rightbar w3-serif w3-card w3-section w3-round"
+      style="width:50%;margin:0 auto;" method="post" action="/login">
+
+    <div class="w3-section">
+        <label for="username_or_email"><b>Username or Email ID</b></label>
+        <input class="w3-input w3-border w3-round w3-light-grey" type="text" id="username_or_email"
+               name="username_or_email"
+               placeholder="Enter your username or email" required>
+    </div>
+
+    <div class="w3-section">
+        <label for="password"><b>Password</b></label>
+        <div class="w3-display-container w3-border w3-round">
+            <input class="w3-input w3-border w3-round w3-light-grey" type="password" id="password"
+                   name="password" placeholder="Enter your password" required>
+            <b class="w3-display-right" onclick="toggle_password()">
+                <img src='static/images/visible.png' alt="Show Password"
+                     width="20" id="toggle_password" title="Show Password">
+                <span>&ensp;</span>
+            </b>
+        </div>
+    </div>
+
+    <div class="w3-section">
+        <button class="w3-button w3-block w3-border w3-round w3-blue-grey" type="submit">Login</button>
+    </div>
+
+</form>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+{% endblock %}

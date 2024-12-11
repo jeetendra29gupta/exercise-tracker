@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+
+{% block title %} Daily Exercise Tracker with Flask {% endblock %}
+
+{% block content %}
+
+{% include 'header.html' %}
+{% include 'navigation.html' %}
+{% include 'message.html' %}
+
+<div class="w3-container w3-auto">
+
+    {% if user_exercises | length > 0 %}
+    <table class="w3-table-all w3-hoverable w3-section">
+        <thead>
+        <tr class="w3-blue">
+            <th>Date</th>
+            <th>Steps Taken</th>
+            <th>Distance</th>
+            <th>Calories Burned</th>
+            <th>Max Heart Rate</th>
+            <th>Min Heart Rate</th>
+            <th>Exercise Duration</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for entry in user_exercises %}
+        <tr>
+            <td style="vertical-align: middle">{{ entry.date.strftime('%Y-%m-%d') }}</td>
+            <td style="vertical-align: middle">{{ entry.steps_taken }}</td>
+            <td style="vertical-align: middle">{{ entry.distance }} km</td>
+            <td style="vertical-align: middle">{{ entry.calories_burned }} kcal</td>
+            <td style="vertical-align: middle">{{ entry.max_heart_rate }} bpm</td>
+            <td style="vertical-align: middle">{{ entry.min_heart_rate }} bpm</td>
+            <td style="vertical-align: middle">{{ entry.exercise_duration }} mins</td>
+            <td style="vertical-align: middle">
+                <a href="{{ url_for('tracker.edit_exercise', exercise_id=entry.id) }}"
+                   class="w3-button">
+                    <img src="{{ url_for('static', filename='images/update.png') }}" alt="Edit" width="20" height="20">
+                </a>
+                <a href="{{ url_for('tracker.delete_exercise', exercise_id=entry.id) }}"
+                   class="w3-button">
+                    <img src="{{ url_for('static', filename='images/delete.png') }}" alt="Edit" width="20" height="20">
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div id="exerciseChartContainer"></div>
+
+    {% else %}
+    <div class="w3-panel w3-border w3-round w3-card w3-leftbar w3-rightbar w3-pale-yellow w3-border-yellow">
+        <h2 class="w3-center">No data found!</h2>
+    </div>
+    {% endif %}
+
+</div>
+
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+<script>
+    // Data for CanvasJS Chart
+    var chartData = {
+        animationEnabled: true,
+        title: {
+            text: "Exercise Data Report"
+        },
+        axisX: {
+            title: "Date",
+            valueFormatString: "YYYY-MM-DD"
+        },
+        axisY: {
+            title: "Values",
+            includeZero: true
+        },
+        toolTip: {
+            shared: true
+        },
+        legend: {
+            cursor: "pointer",
+            itemclick: toggleDataSeries
+        },
+        data: [
+            {
+                type: "line",
+                name: "Steps Taken in 1000 steps",
+                showInLegend: true,
+                dataPoints: [
+                    {% for record in user_exercises %}
+                    { x: new Date("{{ record.date.strftime('%Y-%m-%d %H:%M:%S') }}"), y: {{ record.steps_taken/1000 }} },
+                    {% endfor %}
+                ]
+            },
+            {
+                type: "line",
+                name: "Distance Covered in km",
+                showInLegend: true,
+                dataPoints: [
+                    {% for record in user_exercises %}
+                    { x: new Date("{{ record.date.strftime('%Y-%m-%d %H:%M:%S') }}"), y: {{ record.distance }} },
+                    {% endfor %}
+                ]
+            },
+            {
+                type: "line",
+                name: "Calories Burned in kcal",
+                showInLegend: true,
+                dataPoints: [
+                    {% for record in user_exercises %}
+                    { x: new Date("{{ record.date.strftime('%Y-%m-%d %H:%M:%S') }}"), y: {{ record.calories_burned }} },
+                    {% endfor %}
+                ]
+            },
+            {
+                type: "line",
+                name: "Min Heart Rate in bpm",
+                showInLegend: true,
+                dataPoints: [
+                    {% for record in user_exercises %}
+                    { x: new Date("{{ record.date.strftime('%Y-%m-%d %H:%M:%S') }}"), y: {{ record.min_heart_rate }} },
+                    {% endfor %}
+                ]
+            },
+            {
+                type: "line",
+                name: "Max Heart Rate in bpm",
+                showInLegend: true,
+                dataPoints: [
+                    {% for record in user_exercises %}
+                    { x: new Date("{{ record.date.strftime('%Y-%m-%d %H:%M:%S') }}"), y: {{ record.max_heart_rate }} },
+                    {% endfor %}
+                ]
+            },
+            {
+                type: "line",
+                name: "Avg Heart Rate in bpm",
+                showInLegend: true,
+                dataPoints: [
+                    {% for record in user_exercises %}
+                    { x: new Date("{{ record.date.strftime('%Y-%m-%d %H:%M:%S') }}"), y: {{ record.avg_heart_rate }} },
+                    {% endfor %}
+                ]
+            },
+            {
+                type: "line",
+                name: "Exercise Duration in minutes",
+                showInLegend: true,
+                dataPoints: [
+                    {% for record in user_exercises %}
+                    { x: new Date("{{ record.date.strftime('%Y-%m-%d %H:%M:%S') }}"), y: {{ record.exercise_duration }} },
+                    {% endfor %}
+                ]
+            }
+        ]
+    };
+
+    // Initialize the chart
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("exerciseChartContainer", chartData);
+        chart.render();
+    };
+
+    // Toggle data series visibility on legend click
+    function toggleDataSeries(e) {
+        if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+            e.dataSeries.visible = false;
+        } else {
+            e.dataSeries.visible = true;
+        }
+        e.chart.render();
+    }
+</script>
+
+
+{% endblock %}

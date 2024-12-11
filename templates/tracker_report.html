@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+{% block title %} Daily Exercise Tracker with Flask {% endblock %}
+
+{% block content %}
+
+{% include 'header.html' %}
+{% include 'navigation.html' %}
+{% include 'message.html' %}
+
+<div class="w3-container w3-auto">
+    {% if tracker_data | length > 0 %}
+    {% if action == 'by_steps' %}
+    <h2 class="w3-center">
+        <strong>
+            Steps Taken Report: {{ ((tracker_data | sum(attribute='steps_taken')) / (tracker_data | length)) | round(0)
+            }}
+            steps
+        </strong>
+    </h2>
+    <div id="stepsChartContainer" style="height: 370px; width: 100%;"></div>
+    {% elif action == 'by_distance' %}
+    <h2 class="w3-center">
+        <strong>
+            Distance Report: {{ ((tracker_data | sum(attribute='distance')) / (tracker_data | length)) | round(2) }} km
+        </strong>
+    </h2>
+    <div id="distanceChartContainer" style="height: 370px; width: 100%;"></div>
+    {% elif action == 'by_calories' %}
+    <h2 class="w3-center">
+        <strong>
+            Calories Burned Report: {{ ((tracker_data | sum(attribute='calories_burned')) / (tracker_data | length)) |
+            round(2) }} kcal
+        </strong>
+    </h2>
+    <div id="caloriesChartContainer" style="height: 370px; width: 100%;"></div>
+    {% elif action == 'by_heart_rate' %}
+    <h2 class="w3-center">
+        <strong>
+            Heart Rate Report: {{ ((tracker_data | sum(attribute='avg_heart_rate')) / (tracker_data | length)) |
+            round(0) }}
+            bpm
+        </strong>
+    </h2>
+    <div class="w3-row">
+        <div class="w3-half w3-center">
+            <strong>
+                Min Heart Rate: {{ ((tracker_data | sum(attribute='min_heart_rate')) / (tracker_data | length)) |
+                round(0) }}
+                bpm
+            </strong>
+        </div>
+        <div class="w3-half w3-center">
+            <strong>
+                Max Heart Rate: {{ ((tracker_data | sum(attribute='max_heart_rate')) / (tracker_data | length)) |
+                round(0) }}
+                bpm
+            </strong>
+        </div>
+    </div>
+    <div id="avgHeartRateChartContainer" style="height: 370px; width: 100%;"></div>
+    {% elif action == 'by_duration' %}
+    <h2 class="w3-center">
+        <strong>
+            Duration Report: {{ ((tracker_data | sum(attribute='exercise_duration')) / (tracker_data | length)) |
+            round(0)
+            }} mins
+        </strong>
+    </h2>
+    <div id="exerciseDurationChartContainer" style="height: 370px; width: 100%;"></div>
+    {% endif %}
+
+    {% else %}
+    <div class="w3-panel w3-border w3-round w3-card w3-leftbar w3-rightbar w3-pale-blue w3-border-blue">
+        <h2 class="w3-center">No data found!</h2>
+    </div>
+    {% endif %}
+
+</div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+<script>
+    window.onload = function () {
+        var chartData = {
+            animationEnabled: true,
+            title: {
+                text: "Exercise Data Report"
+            },
+            axisX: {
+                title: "Date",
+                valueFormatString: "YYYY-MM-DD"
+            },
+            axisY: {
+                title: "Values",
+                includeZero: true
+            },
+            toolTip: {
+                shared: true
+            },
+            data: [
+                {% if action == 'by_steps' %}
+                {
+                    type: "line",
+                    name: "Steps Taken (in 1000 steps)",
+                    showInLegend: true,
+                    dataPoints: [
+                        {% for record in tracker_data %}
+                        { x: new Date("{{ record.date.strftime('%Y-%m-%d %H:%M:%S') }}"), y: {{ record.steps_taken / 1000 }} },
+                        {% endfor %}
+                    ]
+                }
+                {% elif action == 'by_distance' %}
+                {
+                    type: "line",
+                    name: "Distance Covered (in km)",
+                    showInLegend: true,
+                    dataPoints: [
+                        {% for record in tracker_data %}
+                        { x: new Date("{{ record.date.strftime('%Y-%m-%d %H:%M:%S') }}"), y: {{ record.distance }} },
+                        {% endfor %}
+                    ]
+                }
+                {% elif action == 'by_calories' %}
+                {
+                    type: "line",
+                    name: "Calories Burned (in kcal)",
+                    showInLegend: true,
+                    dataPoints: [
+                        {% for record in tracker_data %}
+                        { x: new Date("{{ record.date.strftime('%Y-%m-%d %H:%M:%S') }}"), y: {{ record.calories_burned }} },
+                        {% endfor %}
+                    ]
+                }
+                {% elif action == 'by_heart_rate' %}
+                {
+                    type: "line",
+                    name: "Average Heart Rate (in bpm)",
+                    showInLegend: true,
+                    dataPoints: [
+                        {% for record in tracker_data %}
+                        { x: new Date("{{ record.date.strftime('%Y-%m-%d %H:%M:%S') }}"), y: {{ record.avg_heart_rate }} },
+                        {% endfor %}
+                    ]
+                }
+                {% elif action == 'by_duration' %}
+                {
+                    type: "line",
+                    name: "Exercise Duration (in minutes)",
+                    showInLegend: true,
+                    dataPoints: [
+                        {% for record in tracker_data %}
+                        { x: new Date("{{ record.date.strftime('%Y-%m-%d %H:%M:%S') }}"), y: {{ record.exercise_duration }} },
+                        {% endfor %}
+                    ]
+                }
+                {% endif %}
+            ]
+        };
+
+        // Render chart based on the action type
+        var chart;
+        {% if action == 'by_steps' %}
+        chart = new CanvasJS.Chart("stepsChartContainer", chartData);
+        {% elif action == 'by_distance' %}
+        chart = new CanvasJS.Chart("distanceChartContainer", chartData);
+        {% elif action == 'by_calories' %}
+        chart = new CanvasJS.Chart("caloriesChartContainer", chartData);
+        {% elif action == 'by_heart_rate' %}
+        chart = new CanvasJS.Chart("avgHeartRateChartContainer", chartData);
+        {% elif action == 'by_duration' %}
+        chart = new CanvasJS.Chart("exerciseDurationChartContainer", chartData);
+        {% endif %}
+        chart.render();
+    }
+</script>
+
+{% endblock %}

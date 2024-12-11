@@ -1,0 +1,107 @@
+2024-12-11 09:29:25,354 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8181
+ * Running on http://192.168.18.22:8181
+2024-12-11 09:29:25,354 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-11 09:29:25,357 - werkzeug - INFO -  * Restarting with stat
+2024-12-11 09:29:26,232 - werkzeug - WARNING -  * Debugger is active!
+2024-12-11 09:29:26,240 - werkzeug - INFO -  * Debugger PIN: 298-860-699
+2024-12-11 09:29:31,720 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:29:31] "[32mGET / HTTP/1.1[0m" 302 -
+2024-12-11 09:29:31,762 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:29:31] "GET /login HTTP/1.1" 200 -
+2024-12-11 09:29:31,804 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:29:31] "GET /static/js/app.js HTTP/1.1" 200 -
+2024-12-11 09:29:31,807 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:29:31] "GET /static/images/visible.png HTTP/1.1" 200 -
+2024-12-11 09:29:31,809 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:29:31] "GET /static/images/daily-exercise-tracker.png HTTP/1.1" 200 -
+2024-12-11 09:29:32,174 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:29:32] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:31:56,250 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:31:56] "GET /static/images/invisible.png HTTP/1.1" 200 -
+2024-12-11 09:32:48,280 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:32:48] "GET /signup HTTP/1.1" 200 -
+2024-12-11 09:32:48,311 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:32:48] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:32:48,315 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:32:48] "[36mGET /static/images/visible.png HTTP/1.1[0m" 304 -
+2024-12-11 09:32:48,317 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:32:48] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2024-12-11 09:32:48,356 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:32:48] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:33:26,510 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:33:26] "GET /login HTTP/1.1" 200 -
+2024-12-11 09:33:26,554 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:33:26] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:33:26,554 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:33:26] "[36mGET /static/images/visible.png HTTP/1.1[0m" 304 -
+2024-12-11 09:33:26,556 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:33:26] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2024-12-11 09:33:26,569 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:33:26] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:33:41,676 - user_route - INFO - User Sameer Gupta logged in successfully.
+2024-12-11 09:33:41,679 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:33:41] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-12-11 09:33:41,687 - utils - INFO - Session and token validated successfully for user sameer_gupta.
+2024-12-11 09:33:41,731 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:33:41] "GET /dashboard HTTP/1.1" 200 -
+2024-12-11 09:33:41,772 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:33:41] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:33:41,774 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:33:41] "GET /static/images/update.png HTTP/1.1" 200 -
+2024-12-11 09:33:41,774 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:33:41] "GET /static/images/delete.png HTTP/1.1" 200 -
+2024-12-11 09:33:42,033 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:33:42] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:34:54,282 - utils - INFO - Session and token validated successfully for user sameer_gupta.
+2024-12-11 09:34:54,290 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:34:54] "GET /add_exercise_tracker HTTP/1.1" 200 -
+2024-12-11 09:34:54,319 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:34:54] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:34:54,344 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:34:54] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:35:52,755 - utils - INFO - Session and token validated successfully for user sameer_gupta.
+2024-12-11 09:35:52,782 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:35:52] "GET /report/by_steps HTTP/1.1" 200 -
+2024-12-11 09:35:52,809 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:35:52] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:35:52,926 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:35:52] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:36:19,767 - utils - INFO - Session and token validated successfully for user sameer_gupta.
+2024-12-11 09:36:19,779 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:36:19] "GET /report/by_distance HTTP/1.1" 200 -
+2024-12-11 09:36:19,813 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:36:19] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:36:19,888 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:36:19] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:36:41,227 - utils - INFO - Session and token validated successfully for user sameer_gupta.
+2024-12-11 09:36:41,235 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:36:41] "GET /report/by_calories HTTP/1.1" 200 -
+2024-12-11 09:36:41,284 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:36:41] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:36:41,355 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:36:41] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:37:09,263 - utils - INFO - Session and token validated successfully for user sameer_gupta.
+2024-12-11 09:37:09,271 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:37:09] "GET /report/by_heart_rate HTTP/1.1" 200 -
+2024-12-11 09:37:09,305 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:37:09] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:37:09,381 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:37:09] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:37:32,888 - utils - INFO - Session and token validated successfully for user sameer_gupta.
+2024-12-11 09:37:32,895 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:37:32] "GET /report/by_duration HTTP/1.1" 200 -
+2024-12-11 09:37:32,929 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:37:32] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:37:33,013 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:37:33] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:37:59,357 - utils - INFO - Session and token validated successfully for user sameer_gupta.
+2024-12-11 09:37:59,365 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:37:59] "GET /dashboard HTTP/1.1" 200 -
+2024-12-11 09:37:59,418 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:37:59] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:37:59,418 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:37:59] "[36mGET /static/images/update.png HTTP/1.1[0m" 304 -
+2024-12-11 09:37:59,424 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:37:59] "[36mGET /static/images/delete.png HTTP/1.1[0m" 304 -
+2024-12-11 09:37:59,504 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:37:59] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:38:02,177 - utils - INFO - Session and token validated successfully for user sameer_gupta.
+2024-12-11 09:38:02,233 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:38:02] "GET /update_exercise_tracker/3 HTTP/1.1" 200 -
+2024-12-11 09:38:02,266 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:38:02] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:38:02,287 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:38:02] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:38:57,630 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:38:57] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-12-11 09:38:57,636 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:38:57] "[32mGET / HTTP/1.1[0m" 302 -
+2024-12-11 09:38:57,646 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:38:57] "GET /login HTTP/1.1" 200 -
+2024-12-11 09:38:57,684 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:38:57] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:38:57,693 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:38:57] "[36mGET /static/images/visible.png HTTP/1.1[0m" 304 -
+2024-12-11 09:38:57,693 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:38:57] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2024-12-11 09:38:57,707 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:38:57] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:41:02,871 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:02] "GET /login HTTP/1.1" 200 -
+2024-12-11 09:41:02,899 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:02] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:41:02,910 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:02] "[36mGET /static/images/visible.png HTTP/1.1[0m" 304 -
+2024-12-11 09:41:02,912 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:02] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2024-12-11 09:41:02,927 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:02] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:41:10,440 - user_route - INFO - User Sameer Gupta logged in successfully.
+2024-12-11 09:41:10,442 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:10] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-12-11 09:41:10,452 - utils - INFO - Session and token validated successfully for user sameer_gupta.
+2024-12-11 09:41:10,461 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:10] "GET /dashboard HTTP/1.1" 200 -
+2024-12-11 09:41:10,504 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:10] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:41:10,510 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:10] "[36mGET /static/images/update.png HTTP/1.1[0m" 304 -
+2024-12-11 09:41:10,520 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:10] "[36mGET /static/images/delete.png HTTP/1.1[0m" 304 -
+2024-12-11 09:41:10,653 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:10] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:41:11,842 - utils - INFO - Session and token validated successfully for user sameer_gupta.
+2024-12-11 09:41:11,849 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:11] "GET /add_exercise_tracker HTTP/1.1" 200 -
+2024-12-11 09:41:11,885 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:11] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:41:11,901 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:11] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:41:18,875 - utils - INFO - Session and token validated successfully for user sameer_gupta.
+2024-12-11 09:41:18,919 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:18] "[32mPOST /add_exercise_tracker HTTP/1.1[0m" 302 -
+2024-12-11 09:41:18,928 - utils - INFO - Session and token validated successfully for user sameer_gupta.
+2024-12-11 09:41:18,937 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:18] "GET /dashboard HTTP/1.1" 200 -
+2024-12-11 09:41:18,974 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:18] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:41:18,985 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:18] "[36mGET /static/images/update.png HTTP/1.1[0m" 304 -
+2024-12-11 09:41:18,986 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:18] "[36mGET /static/images/delete.png HTTP/1.1[0m" 304 -
+2024-12-11 09:41:19,065 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:19] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:41:26,166 - utils - INFO - Session and token validated successfully for user sameer_gupta.
+2024-12-11 09:41:26,203 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:26] "[32mGET /delete_exercise_tracker/4 HTTP/1.1[0m" 302 -
+2024-12-11 09:41:26,210 - utils - INFO - Session and token validated successfully for user sameer_gupta.
+2024-12-11 09:41:26,221 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:26] "GET /dashboard HTTP/1.1" 200 -
+2024-12-11 09:41:26,252 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:26] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
+2024-12-11 09:41:26,260 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:26] "[36mGET /static/images/update.png HTTP/1.1[0m" 304 -
+2024-12-11 09:41:26,263 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:26] "[36mGET /static/images/delete.png HTTP/1.1[0m" 304 -
+2024-12-11 09:41:26,314 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 09:41:26] "[36mGET /static/images/daily-exercise-tracker.png HTTP/1.1[0m" 304 -
